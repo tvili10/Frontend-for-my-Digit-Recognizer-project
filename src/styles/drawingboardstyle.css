@@ -1,0 +1,33 @@
+.drawingboard {
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  width: 400px;
+  border: 3px solid rgb(178, 131, 44);
+  box-shadow: 0 0 10px 5px rgb(234, 106, 20);
+  background-color: rgb(83, 47, 3);
+  border-radius: 10px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  border: none;
+  margin: 0;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.clear-btn {
+  background-color: rgb(0, 0, 0);
+  font-size: larger;
+  border-radius: 10px;
+  font-weight: bolder;
+  border: 3px solid rgb(180, 122, 14);
+  color: burlywood;
+  box-shadow: 0 0 10px 0px rgb(234, 106, 20);
+}

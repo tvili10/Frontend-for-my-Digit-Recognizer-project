@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 2rem;
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    color: rgb(248, 134, 2);
+    font-weight: bolder;
+    font-size: 2em;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+    transition: 0.2s color ease-in;
+}
+
+.selected-link {
+    color: rgb(249, 221, 170);
+    font-weight: bolder;
+    font-size: 2em;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+}
+
+

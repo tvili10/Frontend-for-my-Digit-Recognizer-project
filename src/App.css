@@ -1,0 +1,44 @@
+/* 1. Target the entire scrollbar */
+::-webkit-scrollbar {
+  width: 1px;
+  /* Width for vertical scrollbar */
+  height: 12px;
+  /* Height for horizontal scrollbar */
+}
+
+/* 2. Styling the scrollbar track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  /* Light gray background */
+  border-radius: 10px;
+}
+
+/* 3. Styling the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Darker thumb */
+  border-radius: 10px;
+}
+
+/* 4. Styling the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+  /* Darker shade on hover */
+}
+
+/* 5. Styling the corner where both horizontal and vertical scrollbars meet */
+::-webkit-scrollbar-corner {
+  background-color: #f1f1f1;
+}
+
+
+
+body {
+  background-color: rgb(59, 59, 59);
+  font-family: 'Roboto', sans-serif;
+  user-select: none;
+  /* Prevents text selection */
+  -webkit-user-drag: none;
+  /* Prevents dragging in WebKit browsers */
+  pointer-events: all;
+}

@@ -1,0 +1,57 @@
+
+.labels-container {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+.selectable-label, .selected-label {
+    color: rgb(227, 150, 7);
+    font-size: 1.5em;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5em;
+    height: 2.5em;
+    border: 3px solid rgb(227, 150, 7);
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 10px;
+}
+
+.selected-label {
+    border: 3px solid burlywood;
+    color: burlywood;
+    box-shadow: 0 0 10px 0px burlywood;
+}
+
+
+.send-btn-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.send-btn {
+    color: burlywood;
+    border: 3px solid rgb(227, 150, 7);
+    background-color: rgb(85, 59, 5);
+    border-radius: 10px;
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: bolder;
+    padding: 5px;
+}
+
+.label-txt {
+    color: burlywood;
+    text-align: center;
+}

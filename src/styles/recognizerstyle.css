@@ -1,0 +1,76 @@
+
+
+.prediction-par {
+  text-align: center;
+  color: burlywood;
+  font-size: 2em;
+  font-weight: bolder;
+  transition: 0.3s background ease-in-out;
+}
+
+.highlighted {
+
+  font-weight: bolder;
+}
+
+.predicted-number{
+    color: rgb(227, 150, 7);
+    font-weight: bolder;
+}
+.prob-details summary::marker {
+  content: "📈";
+}
+
+.prob-details summary{
+  color: burlywood;
+  font-size: 2em;
+  text-align: center;
+  font-weight: bolder;
+  user-select: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+
+.prob-table {
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 30px;
+  width: 200px;
+  border: 3px solid burlywood;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+.prob-table td {
+  text-align: center;
+  width: 50%;
+}
+
+
+.label {
+  color: burlywood;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+.prob {
+  color: rgb(227, 150, 7);
+  font-weight: bolder;
+  font-size: 1.5em;
+  text-align: center;
+
+}
+
+.chartopened {
+  color: rgb(227, 150, 7);
+}
+
+.separator {
+  width: 75%;
+  border:2px solid rgb(227, 150, 7);
+  margin-bottom: 20px;
+}
