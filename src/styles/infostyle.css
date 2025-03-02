@@ -1,0 +1,35 @@
+
+
+.title {
+    text-align: center;
+    color: rgb(255, 132, 0);
+    font-weight: bolder;
+
+}
+
+.subtitle {
+    color: rgb(255, 145, 0);
+    margin-bottom: 0;
+    font-size: 2em;
+}
+
+.section{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.subtitle-separator{
+    border: 2px solid rgb(215, 129, 54);
+}
+
+.subtitle-info{
+    color: burlywood;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+.highlighted-info {
+    color: orange;
+}

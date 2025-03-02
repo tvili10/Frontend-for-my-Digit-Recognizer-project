@@ -1,10 +1,17 @@
 import React from 'react';
+import "../styles/infostyle.css"
+
 
 function Info() {
   return (
     <div>
-      <h1>Info Page</h1>
-      <p>This is the Info page content.</p>
+      <h1 className='title'>Welcome to my Digit recongizer project!</h1>
+      <div className='section'>
+        <h2 className='subtitle'>Motivation</h2>
+        <hr className='subtitle-separator'/>
+        <p className='subtitle-info'>During my <span className='highlighted-info'>university </span> studies,</p>
+
+      </div>
     </div>
   );
 }
