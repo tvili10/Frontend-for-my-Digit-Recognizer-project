@@ -2,13 +2,13 @@
 
 .title {
     text-align: center;
-    color: rgb(255, 132, 0);
+    color: rgb(231, 198, 141);
     font-weight: bolder;
 
 }
 
 .subtitle {
-    color: rgb(255, 145, 0);
+    color: rgb(203, 122, 17);
     margin-bottom: 0;
     font-size: 2em;
 }
@@ -31,5 +31,5 @@
 }
 
 .highlighted-info {
-    color: orange;
+    color: rgb(223, 146, 4);
 }

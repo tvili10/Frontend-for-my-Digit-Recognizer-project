@@ -37,8 +37,6 @@ body {
   background-color: rgb(59, 59, 59);
   font-family: 'Roboto', sans-serif;
   user-select: none;
-  /* Prevents text selection */
   -webkit-user-drag: none;
-  /* Prevents dragging in WebKit browsers */
   pointer-events: all;
 }
