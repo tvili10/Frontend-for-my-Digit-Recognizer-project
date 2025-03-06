@@ -2,7 +2,7 @@
 
 .title {
     text-align: center;
-    color: rgb(231, 198, 141);
+    color: rgb(234, 167, 51);
     font-weight: bolder;
 
 }
@@ -31,5 +31,28 @@
 }
 
 .highlighted-info {
-    color: rgb(223, 146, 4);
+    color: rgb(206, 143, 27);
+}
+
+.code-snippet {
+    width: 50%;
+    font-size: small;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highlighted-info .katex {
+    font-weight: bolder;
+}
+
+.tr-example-pic {
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+    border: 3px solid rgb(227, 150, 7);
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
