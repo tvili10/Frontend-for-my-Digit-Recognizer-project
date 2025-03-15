@@ -26,10 +26,9 @@ return (
                 The Neural network I implemented from scratch, using python and numpy is a <span className='highlighted-info'>Multi-layer perceptron (MLP)</span>  with an input layer, two hidden layers, and an output layer. 
                 In my case the input vector is of size 784 (28x28 pixels), and the output vector is of size 10, representing the probabilty distribution of all digits from 0 to 9. The goal is to find a funtion that maximaze the probability of the correct digit and minimize the probability of the incorrect digits.
                 <span className='highlighted-info'>
-                    <BlockMath key="network-architecture" math={'x \\rightarrow \\ our \\ optimized \\ function \\ \\rightarrow  y'} />
-                    <BlockMath math={'(x \\in \\mathbb{R}^{784} \\ , \\ \\text{ } y \\in \\mathbb{R}^{10})'}/>
-                    <BlockMath math={'(\\forall \\ i = \\ 1 \\dots 784 \\ :\\ x_i \\ is \\ the \\ brightness \\ of \\ the \\ pixel )'} />
-                    <BlockMath math={'(\\forall \\ j = \\ 1 \\dots 10 \\ : \\ y_j \\ is \\ the \\ probability \\ of \\ the \\ j-1th \\ digit)'} />
+                    <BlockMath key="network-architecture" math={'x \\rightarrow \\ our \\ optimized \\ function \\ \\rightarrow  y \\\\ (x \\in \\mathbb{R}^{784} \\ , \\ \\text{ } y \\in \\mathbb{R}^{10})'} />
+                   <BlockMath math={'(\\forall \\ i = \\ 1, \\ 2  \\dots 784 \\ :\\ x_i \\ is \\ the \\ brightness \\ of \\ the \\ pixel ) \\\\ (\\forall \\ j = \\ 1, \\ 2 \\dots 10 \\ : \\ y_j \\ is \\ the \\ probability \\ of \\ the \\ j-1th \\ digit)'} />
+                    <BlockMath math={''} />
                     <BlockMath math={'(x_i \\ , y_j \\in [0,1])'} />
                 </span>
                 For a given example it looks something like this: 
@@ -40,7 +39,7 @@ return (
                 <br/>
 
                 <span className='highlighted-info'> 
-                    <BlockMath math={` \\begin{bmatrix}  0 \\\\ 0 \\\\ \\vdots \\\\ 0.56 \\\\ 0.89 \\\\ 0.43 \\\\ \\vdots \\\\ 1 \\\\ 1 \\\\ \\vdots \\\\ 0 \\end{bmatrix} \\rightarrow \\ our \\ optimized \\ function \\ \\rightarrow \\begin{bmatrix} 0.02 \\\\ 0.02  \\\\ 0.03 \\\\ 0.03 \\\\ 0.03 \\\\ 0.5 \\\\ 0.1 \\\\ 0.03 \\\\ 0.08 \\\\ 0.1   \\end{bmatrix}`} />
+                    <BlockMath math={`784 \\ \\begin{cases} \\begin{bmatrix}  0 \\\\ 0 \\\\ \\vdots \\\\ 0.56 \\\\ 0.89 \\\\ 0.43 \\\\ \\vdots \\\\ 1 \\\\ 1 \\\\ \\vdots \\\\ 0 \\end{bmatrix} \\end{cases} \\rightarrow \\ our \\ optimized \\ function \\ \\rightarrow \\begin{bmatrix} 0.02 \\\\ 0.02  \\\\ 0.03 \\\\ 0.03 \\\\ 0.03 \\\\ 0.5 \\\\ 0.1 \\\\ 0.03 \\\\ 0.08 \\\\ 0.1   \\end{bmatrix} `} />
                 </span>
                 In this completely made-up example, the network predicts that the digit is a 5 with a probability of 50%. During training our goal is adjust the parameters in a way that next time the network sees a similar image, it will predict 5 with a higher probability.  
 

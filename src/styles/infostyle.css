@@ -44,6 +44,7 @@
 
 .highlighted-info .katex {
     font-weight: bolder;
+    max-width: 100%;
 }
 
 .tr-example-pic {
