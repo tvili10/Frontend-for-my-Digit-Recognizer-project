@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Drawingboard from '../components/Drawinboard';
 import Board from '../utils/Board';
 import base_url from '../utils/base_url.js';
@@ -10,7 +10,7 @@ function Recognizer() {
   const [probabilities, setProbabilities] = useState([]);
   const [isPorbablityChartOpen, setIsPorbablityChartOpen] = useState(false);
 
-  const B = new Board()
+  const B = useMemo(() =>  new Board(), [])
 
 
  
@@ -50,7 +50,7 @@ function Recognizer() {
     B.addEventListener('changed', handlePrediction);
 
 
-  }, []); 
+  }, [B, probabilities]); 
 
   const handleProbabailtyChartClicked = () => {
     setIsPorbablityChartOpen(!isPorbablityChartOpen);
