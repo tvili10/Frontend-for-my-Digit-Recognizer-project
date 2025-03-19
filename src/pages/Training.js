@@ -6,9 +6,9 @@ import "../styles/trainingstyle.css";
 
 
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 function Training() {
-  const [B, SetB] = useState(new Board());
+  const B = new Board();
 
 
   
@@ -68,7 +68,7 @@ function Training() {
 
 
   const adjuctLabelClasses = (index) => {
-    if(index == labelByUser) {
+    if(index === labelByUser) {
       resetLabelClasses()
       return
     }
@@ -106,7 +106,7 @@ function Training() {
         body: JSON.stringify({ pixels: B.getBrightnessInOneDimArray(), label: labelByUser }),
       });
 
-  
+      console.log(response)
 
 
 

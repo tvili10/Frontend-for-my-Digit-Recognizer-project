@@ -1,7 +1,7 @@
 
 import './App.css';
-import React, { useRef, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Recognizer from "./pages/Recognizer";
 import Training from "./pages/Training";
 import Info from "./pages/Info";

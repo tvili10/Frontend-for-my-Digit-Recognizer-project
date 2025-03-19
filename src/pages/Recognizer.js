@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Drawingboard from '../components/Drawinboard';
 import Board from '../utils/Board';
 import base_url from '../utils/base_url.js';
@@ -10,7 +10,7 @@ function Recognizer() {
   const [probabilities, setProbabilities] = useState([]);
   const [isPorbablityChartOpen, setIsPorbablityChartOpen] = useState(false);
 
-  const [B, setB] = useState(new Board());
+  const B = new Board()
 
 
  

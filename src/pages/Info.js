@@ -2,8 +2,6 @@ import React from 'react';
 import { InlineMath, BlockMath } from 'react-katex';
 import "../styles/infostyle.css"
 import 'katex/dist/katex.min.css';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import trExample from '../imgs/tr-example.png';
 
 
