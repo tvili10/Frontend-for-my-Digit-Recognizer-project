@@ -2,9 +2,10 @@
 
 .title {
     text-align: center;
-    color: rgb(234, 167, 51);
+    color: rgb(215, 129, 54);
     font-weight: bolder;
-
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
 .subtitle {
@@ -20,8 +21,17 @@
     width: 80%;
 }
 
+.title-separator {
+    border: 2px solid burlywood;
+ 
+    width: 80%;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
 .subtitle-separator{
     border: 2px solid rgb(215, 129, 54);
+
 }
 
 .subtitle-info{
@@ -57,3 +67,44 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.subtitle-info br {
+    margin-bottom: 20px;
+}
+
+.example-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    
+    border: 4px solid rgb(215, 129, 54);
+}
+
+.example-container legend {
+    display: block;
+    padding-left: 2px;
+     padding-right: 2px;
+    border: none;
+    font-size: 1.5em;
+}
+
+.highlighted-info .katex {
+    font-size: 25px;
+  }
+
+  /* Medium screens (e.g., tablets) */
+  @media (max-width: 768px) {
+    #katex-container {
+      font-size: 16px;
+    }
+  }
+
+  /* Small screens (e.g., phones) */
+  @media (max-width: 480px) {
+    #katex-container {
+      font-size: 14px;
+    }
+  }
