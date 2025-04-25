@@ -5,20 +5,20 @@ import base_url from '../utils/base_url.js';
 import '../styles/recognizerstyle.css';
 
 function Recognizer() {
- 
+
   const [prediction, setPrediction] = useState(null);
   const [probabilities, setProbabilities] = useState([]);
   const [isPorbablityChartOpen, setIsPorbablityChartOpen] = useState(false);
 
-  const B = useMemo(() =>  new Board(), [])
+  const B = useMemo(() => new Board(), [])
 
 
- 
+
 
   useEffect(() => {
-    
 
-    
+
+
     const handlePrediction = async () => {
       try {
         const response = await fetch(`${base_url}/predict`, {
@@ -29,7 +29,7 @@ function Recognizer() {
 
         if (!response.ok) throw new Error('Failed to get prediction');
 
-
+        
 
         const data = await response.json();
         setPrediction(data.prediction);
@@ -50,7 +50,7 @@ function Recognizer() {
     B.addEventListener('changed', handlePrediction);
 
 
-  }, [B, probabilities]); 
+  }, [B, probabilities]);
 
   const handleProbabailtyChartClicked = () => {
     setIsPorbablityChartOpen(!isPorbablityChartOpen);
@@ -67,7 +67,7 @@ function Recognizer() {
               <span className='highlighted'>Prediction: </span>
               <span className='predicted-number'>{prediction}</span>
             </p>
-            <hr className='separator'/>
+            <hr className='separator' />
             <details className='prob-details'>
               <summary onClick={handleProbabailtyChartClicked}>Click to <span className='chartopened'>{isPorbablityChartOpen ? "hide" : "see"}</span> probablty distribution</summary>
               <table className='prob-table'>

@@ -6,7 +6,7 @@ import trExample from '../imgs/tr-example.png';
 
 
  function Info()   {
-return (
+    return (
     <div>
        
         <h1 className='title'>Welcome to my Digit recognizer project!</h1>

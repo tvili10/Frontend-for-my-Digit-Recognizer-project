@@ -1,68 +1,117 @@
+/**
+ * Represents a drawing board with pixel brightness tracking capabilities.
+ * @extends EventTarget
+ */
 export default class Board extends EventTarget {
-
+    /**
+     * Creates a new Board instance.
+     */
     constructor() {
         super();
-        this.name = 1
         this.SIZE = 28;
-        this.pixelsBrightness = Array(this.SIZE).fill().map(() => Array(this.SIZE).fill(0));
+        this.pixelsBrightness = this.createEmptyBoard();
         this.drawEvent = new Event('changed');
         this.sentDataEvent = new Event('sentData');
     }
 
+    /**
+     * Creates an empty board with all pixels set to 0 brightness.
+     * @returns {number[][]} A 2D array representing the empty board
+     */
+    createEmptyBoard() {
+        return Array(this.SIZE).fill().map(() => Array(this.SIZE).fill(0));
+    }
 
+    /**
+     * Colors a pixel and its surrounding pixels at the specified coordinates.
+     * @param {number} row - The row coordinate
+     * @param {number} col - The column coordinate
+     */
     colorPixel(row, col) {
-        this.pixelsBrightness[row][col] = 1;
-        this.colorSorroudningPixels(row, col);
-    
+        this.colorSurroundingPixels(row, col);
     }
 
-    colorSorroudningPixels(row, col) {
+    /**
+     * Colors the surrounding pixels of a given coordinate with random brightness.
+     * @param {number} row - The row coordinate
+     * @param {number} col - The column coordinate
+     */
+    colorSurroundingPixels(row, col) {
         this.pixelsBrightness[row][col] = 1;
-        if (row > 0) this.pixelsBrightness[row - 1][col] = this.checkIfPixelIsBrighter(row - 1, col, Math.random());
-        if (row < this.SIZE - 1) this.pixelsBrightness[row + 1][col] = this.checkIfPixelIsBrighter(row + 1, col, Math.random() );
-        if (col > 0) this.pixelsBrightness[row][col - 1] = this.checkIfPixelIsBrighter(row, col - 1, Math.random() );
-        if (col < this.SIZE - 1) this.pixelsBrightness[row][col + 1] = this.checkIfPixelIsBrighter(row, col + 1, Math.random() );
-        
-        // Color the corner pixels
-        /*if (row > 0 && col > 0) this.pixelsBrightness[row - 1][col - 1] = this.checkIfPixelIsBrighter(row - 1, col - 1, Math.random() );
-        if (row > 0 && col < this.SIZE - 1) this.pixelsBrightness[row - 1][col + 1] = this.checkIfPixelIsBrighter(row - 1, col + 1, Math.random() );
-        if (row < this.SIZE - 1 && col > 0) this.pixelsBrightness[row + 1][col - 1] = this.checkIfPixelIsBrighter(row + 1, col - 1, Math.random() );
-        if (row < this.SIZE - 1 && col < this.SIZE - 1) this.pixelsBrightness[row + 1][col + 1] = this.checkIfPixelIsBrighter(row + 1, col + 1, Math.random() );
-    */
+
+        const directions = [
+            [row - 1, col], // up
+            [row + 1, col], // down
+            [row, col - 1], // left
+            [row, col + 1]  // right
+        ];
+
+        for (const [newRow, newCol] of directions) {
+            if (this.isValidPosition(newRow, newCol)) {
+                this.pixelsBrightness[newRow][newCol] = this.checkIfPixelIsBrighter(
+                    newRow,
+                    newCol,
+                    Math.random()
+                );
+            }
+        }
     }
 
-  
+    /**
+     * Checks if a position is valid on the board.
+     * @param {number} row - The row coordinate
+     * @param {number} col - The column coordinate
+     * @returns {boolean} Whether the position is valid
+     */
+    isValidPosition(row, col) {
+        return row >= 0 && row < this.SIZE && col >= 0 && col < this.SIZE;
+    }
+
+    /**
+     * Returns the maximum brightness between current pixel brightness and new brightness.
+     * @param {number} row - The row coordinate
+     * @param {number} col - The column coordinate
+     * @param {number} brightness - The new brightness value
+     * @returns {number} The maximum brightness value
+     */
     checkIfPixelIsBrighter(row, col, brightness) {
         return Math.max(this.pixelsBrightness[row][col], brightness);
     }
 
+    /**
+     * Converts the 2D brightness array into a 1D array.
+     * @returns {number[]} Flattened array of brightness values
+     */
     getBrightnessInOneDimArray() {
-        let brightness = [];
-        for (let i = 0; i < this.SIZE; i++) {
-            for (let j = 0; j < this.SIZE; j++) {
-                brightness.push(this.pixelsBrightness[i][j]);
-            }
-        }
-        return brightness; 
+        return this.pixelsBrightness.flat();
     }
 
+    /**
+     * Signals that drawing is complete.
+     */
     drawingDone() {
         this.dispatchEvent(this.drawEvent);
     }
 
+    /**
+     * Clears the board by setting all pixels to 0 brightness.
+     */
     clear() {
-        this.pixelsBrightness = Array(this.SIZE).fill().map(() => Array(this.SIZE).fill(0));
-        
+        this.pixelsBrightness = this.createEmptyBoard();
     }
 
+    /**
+     * Restarts the drawing by clearing the board and dispatching the draw event.
+     */
     restartDrawing() {
-        this.pixelsBrightness = null;
-        this.dispatchEvent(this.drawEvent);
         this.clear();
+        this.dispatchEvent(this.drawEvent);
     }
 
+    /**
+     * Signals that data has been sent.
+     */
     sentData() {
         this.dispatchEvent(this.sentDataEvent);
     }
-
 }
