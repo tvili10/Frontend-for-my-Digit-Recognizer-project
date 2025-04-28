@@ -6,15 +6,16 @@
   border: 3px solid rgb(178, 131, 44);
   box-shadow: 0 0 10px 5px rgb(234, 106, 20);
   transition: box-shadow 0.3s ease;
-
   background-color: rgb(83, 47, 3);
   border-radius: 10px;
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 .drawingboard:hover {
   box-shadow: 0 0 15px 8px rgb(234, 106, 20);
   transition: box-shadow 0.3s ease;
+
 }
 
 td {
