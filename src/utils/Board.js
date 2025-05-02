@@ -12,6 +12,7 @@ export default class Board extends EventTarget {
         this.pixelsBrightness = this.createEmptyBoard();
         this.drawEvent = new Event('changed');
         this.sentDataEvent = new Event('sentData');
+        this.clearedEvent = new Event('cleared');
     }
 
     /**
@@ -105,7 +106,7 @@ export default class Board extends EventTarget {
      */
     restartDrawing() {
         this.clear();
-        this.dispatchEvent(this.drawEvent);
+        this.dispatchEvent(this.clearedEvent);
     }
 
     /**
