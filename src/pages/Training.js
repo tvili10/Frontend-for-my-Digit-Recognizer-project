@@ -8,12 +8,12 @@ import "../styles/trainingstyle.css";
 
 import { useState } from 'react';
 function Training() {
-  const B = new Board();
+  const _board = new Board();
 
 
   
 
-  const [labels, setLabels] = useState([
+  const [_labels, setLabels] = useState([
     {
       num: 0,
       className: 'selectable-label',
@@ -64,15 +64,15 @@ function Training() {
     }
 
   ]);
-  const [labelByUser, setLabelByUser] = useState(null)
+  const [_labelByUser, setLabelByUser] = useState(null)
 
 
   const adjuctLabelClasses = (index) => {
-    if(index === labelByUser) {
+    if(index === _labelByUser) {
       resetLabelClasses()
       return
     }
-    const newLabels = [...labels];
+    const newLabels = [..._labels];
     for (let i = 0; i < newLabels.length; i++) {
       if (i === index) {
         newLabels[i].className = 'selected-label';
@@ -85,7 +85,7 @@ function Training() {
   }
 
   const resetLabelClasses = () => {
-    const newLabels = [...labels];
+    const newLabels = [..._labels];
     for (let i = 0; i < newLabels.length; i++) {
       newLabels[i].className = 'selectable-label';
     }
@@ -94,16 +94,16 @@ function Training() {
   }
 
   const handleSentData = async () => {
-    console.log(B.pixelsBrightness)
+    console.log(_board.pixelsBrightness)
 
     try {
-      if (labelByUser == null) throw new Error()
+      if (_labelByUser == null) throw new Error()
 
-      console.log(B.getBrightnessInOneDimArray())
+      console.log(_board.getBrightnessInOneDimArray())
       const response = await fetch(`${base_url}/addtrainingexample`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ pixels: B.getBrightnessInOneDimArray(), label: labelByUser }),
+        body: JSON.stringify({ pixels: _board.getBrightnessInOneDimArray(), label: _labelByUser }),
       });
 
       console.log(response)
@@ -115,17 +115,17 @@ function Training() {
       console.log("unable to send data")
     }
 
-    B.sentData();
+    _board.sentData();
     resetLabelClasses();
   }
 
   return (
     <div>
-      <Drawingboard board={B} />
+      <Drawingboard board={_board} />
       <h1 className='label-txt'>Label your training example!</h1>
       <div className='labels-container'>
 
-        {labels.map((label, index) => {
+        {_labels.map((label, index) => {
           return <div key={index} className={label.className} onClick={() => adjuctLabelClasses(index)}>{label.num}</div>
         })}
 
