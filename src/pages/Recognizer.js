@@ -29,7 +29,7 @@ function Recognizer() {
 
         if (!response.ok) throw new Error('Failed to get prediction');
 
-        
+
 
         const data = await response.json();
         setPrediction(data.prediction);
@@ -47,8 +47,14 @@ function Recognizer() {
       }
     };
 
-    _board.addEventListener('changed', handlePrediction);
 
+    const handleCleared = () => {
+      setPrediction(null)
+      setProbabilities([])
+    }
+
+    _board.addEventListener('changed', handlePrediction);
+    _board.addEventListener('cleared', handleCleared);
 
   }, [_board, _probabilities]);
 
