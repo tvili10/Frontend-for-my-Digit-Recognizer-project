@@ -15,7 +15,7 @@
 .drawingboard:hover {
   box-shadow: 0 0 15px 8px rgb(234, 106, 20);
   transition: box-shadow 0.3s ease;
-  
+
 }
 
 td {

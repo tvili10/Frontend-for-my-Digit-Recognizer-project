@@ -41,6 +41,7 @@ function Recognizer() {
         setProbabilities(sortedProbabilities);
         setIsPorbablityChartOpen(false)
         console.log(_probabilities)
+        
       } catch (error) {
         console.error('Error:', error);
         setPrediction(null)
@@ -67,6 +68,7 @@ function Recognizer() {
 
       <div>
         <Drawingboard board={_board} />
+
         {_prediction !== null ? (
           <div>
             <p className='prediction-par'>
