@@ -56,3 +56,10 @@ td {
 .color-box.selected {
   border: 3px solid wheat;
 }
+
+@media screen and (max-width: 500px) {
+  .drawingboard {
+    width: 300px;
+    height: 300px;
+  }
+}
