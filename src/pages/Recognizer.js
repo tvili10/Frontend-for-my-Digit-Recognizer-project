@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import Drawingboard from '../components/Drawinboard';
+import Drawingboard from '../components/Drawingboard.js';
 import Board from '../utils/Board';
 import base_url from '../utils/base_url.js';
 import '../styles/recognizerstyle.css';
@@ -41,7 +41,7 @@ function Recognizer() {
         setProbabilities(sortedProbabilities);
         setIsPorbablityChartOpen(false)
         console.log(_probabilities)
-        
+
       } catch (error) {
         console.error('Error:', error);
         setPrediction(null)

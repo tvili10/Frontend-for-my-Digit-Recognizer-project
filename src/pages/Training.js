@@ -1,7 +1,7 @@
 import React from 'react';
 import Board from '../utils/Board';
 import base_url from '../utils/base_url.js';
-import Drawingboard from '../components/Drawinboard';
+import Drawingboard from '../components/Drawingboard.js';
 import "../styles/trainingstyle.css";
 
 
@@ -11,7 +11,7 @@ function Training() {
   const _board = new Board();
 
 
-  
+
 
   const [_labels, setLabels] = useState([
     {
@@ -68,7 +68,7 @@ function Training() {
 
 
   const adjuctLabelClasses = (index) => {
-    if(index === _labelByUser) {
+    if (index === _labelByUser) {
       resetLabelClasses()
       return
     }
