@@ -9,14 +9,14 @@ import trExample from '../imgs/tr-example.png';
     return (
     <div>
        
-        <h1 className='title'>Welcome to my Digit recognizer project!</h1>
+        <h1 className='title'>Welcome to my Digit Classifier project!</h1>
         <div className='section'>
             <h2 className='subtitle'>Motivation</h2>
             <hr className='subtitle-separator'/>
             <p className='subtitle-info'>One of my main interest lately has been <span className='highlighted-info'>Deep learning</span>. With this project I was able to get a deeper understanding behind the mathematics and the structure of <span className='highlighted-info'>Neural Networks</span>, 
-            and how they can be applied to solve problems. This project specifically focuses on recognizing handwritten digits
+            and how they can be applied to solve problems. This project specifically focuses on classifying handwritten digits
             </p>
-        </div>
+        </div>  
         <div className='section'>
             <h2 className='subtitle'>About the Neural Network</h2>
             <hr className='subtitle-separator'/>
@@ -46,14 +46,22 @@ import trExample from '../imgs/tr-example.png';
                 </fieldset>
                 
                 In this completely made-up example, the network predicts that the digit is a 5 with a probability of 50%. During training our goal is adjust the parameters of the network in a way that next time our model sees a similar image, it will predict 5 with a higher probability.  
-
-               
-               
-               
-
-
             </p>
-         
+            <h2 className='subtitle'>How does the network learn?</h2>
+            <hr className='subtitle-separator'/>
+            <p className='subtitle-info'>For the network to learn, we need to define a <span className='highlighted-info'>loss function</span> that will measure how good or bad the network is at predicting the correct output vector. 
+            <span className='highlighted-info'>
+                <BlockMath math={'L : \\theta \\to \\mathbb{R}'}/>
+            </span>
+            Where <span className='highlighted-info'><InlineMath math={"\\theta"} /></span> is a vektor that contains all the parameters of the network.
+            During training we have to calculate the gradient of the loss function with respect to the parameters of the network:
+            <span className='highlighted-info'>
+                <BlockMath math={'\\nabla_{\\theta} L(\\theta)'}/>
+            </span>
+            This gradient will tell us in which direction we have to adjust the parameters of the network to minimize the loss function.
+            <br/>
+            <br/>
+            </p>
         </div>
     </div>
 );
