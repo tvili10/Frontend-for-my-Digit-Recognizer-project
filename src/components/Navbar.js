@@ -7,7 +7,7 @@ function Navbar() {
     const location = useLocation(); 
 
     const [linksData, setLinksData] = useState([
-        { path: "/", label: "Recognize", className: "nav-link" },
+        { path: "/", label: "Classifier", className: "nav-link" },
         { path: "/training", label: "Training", className: "nav-link" },
         { path: "/info", label: "Info", className: "nav-link" }
     ]);
